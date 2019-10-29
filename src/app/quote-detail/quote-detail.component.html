@@ -1,3 +1,13 @@
-<p>
-    {{quote.description}}
-</p>
+<div class="descrip">
+<p> {{quote.description}}</p>
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+<button (click)="upvotes(i)" class="btn btn-primary">like</button>{{quote.upvotes}}
+          <button (click)="Downvotes(i)" class="btn btn-outline-danger">Dislike</button>{{quote.Downvotes}}</div></div>
+          <br>
+        
+<button (click)= 'quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button>
+</div>
+<br>

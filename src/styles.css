@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+    background-image:url("https://cdn.pixabay.com/photo/2017/12/01/00/01/dance-2989824_960_720.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.app{
+    color:white;
+    font-size: 20px;
+    padding:30px;
+}

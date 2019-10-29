@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Quote } from '../quote';
 
 @Component({
@@ -10,13 +10,53 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
   
   quote:Quote [] = [
-  new Quote (1, 'get yourself a me coz im lit', 'fgiuyfuhiooihuyfy'),
-  new Quote (2,'life has no limitations except the ones you make','kjx zbholdh haieof o'),
-  new Quote (3,'Never be intimidated by what you do not know' ,'kjdfhazdsyultba'),
-  new Quote (4,'kill them with success and bury them with a smile' ,'hgf,IHAWERVBGci, MJcvblwbuf '),
-  new Quote (5,'Stop looking for happiness the same place you lost it' ,'hulrvzewtbhi.gjwewns'),
-  new Quote (6,'you gotta have to dance like no one is watching,love like you will never be hurt,sing like no one is listeningand live like heaven is on earth' ,'ugeilsbgvehnjpl'),
+  new Quote (1, 'get yourself a me coz im lit', 'Be proud of who you are always'),
+  new Quote (2,'life has no limitations except the ones you make','you will always decide about your life'),
+  new Quote (3,'Never be intimidated by what you do not know' ,'You always have a room to know everything it only takes time'),
+  new Quote (4,'kill them with success and bury them with a smile' ,'Always strive your best to ashame your enemies'),
+  new Quote (5,'Stop looking for happiness the same place you lost it' ,'You sometimes have to move on with life'),
+  new Quote (6,'you gotta have to dance like no one is watching,love like you will never be hurt,sing like no one is listeningand live like heaven is on earth' ,'Do everything to your perfection'),
   ];
+
+
+  toggleDetails(index){
+    this.quote[index].showDescription = !this.quote[index].showDescription;
+  }
+  @Input() Quote: Quote;
+  @Output()isComplete = new EventEmitter<boolean>();
+
+  addNewQuote(quote){
+    let quoteLength=this.quote.length;
+    quote.id=quoteLength+1;
+    quote.complete=(quote.complete)
+    this.quote.push(quote)
+
+  }
+  quoteComplete(isComplete:boolean){
+  this.isComplete.emit(isComplete);
+  }
+  completeQuote(isComplete, index){
+    if (isComplete) {
+      this.quote.splice(index,1);
+    }
+  }
+  deleteQuote(isComplete, index){
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quote[index].name}?`)
+
+      if (toDelete){
+        this.quote.splice(index,1)
+      }
+    }
+  }
+  addUpvotes(i){
+    this.quote[i].upvotes+=1;
+  }
+  addDownVotes(i){
+    this.quote[i].Downvotes-=1;
+  }
+
+  
 
 
   constructor() { }
