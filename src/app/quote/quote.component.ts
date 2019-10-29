@@ -10,7 +10,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
   
   quote:Quote [] = [
-  new Quote (1, 'get yourself a me coz im lit', 'Be proud of who you are always'),
+  new Quote (1, 'get yourself a me coz im lit', 'Be proud of who you are always' ),
   new Quote (2,'life has no limitations except the ones you make','you will always decide about your life'),
   new Quote (3,'Never be intimidated by what you do not know' ,'You always have a room to know everything it only takes time'),
   new Quote (4,'kill them with success and bury them with a smile' ,'Always strive your best to ashame your enemies'),
