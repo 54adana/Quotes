@@ -50,10 +50,10 @@ export class QuoteComponent implements OnInit {
     }
   }
   addUpvotes(i){
-    this.quote[i].upvotes+=1;
+    this.quote[i].like +=1;
   }
-  addDownVotes(i){
-    this.quote[i].Downvotes-=1;
+  addDownvotes(i){
+    this.quote[i].Dislike +=1;
   }
 
   

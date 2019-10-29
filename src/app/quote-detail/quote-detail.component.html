@@ -4,8 +4,10 @@
 
 <div class="row">
     <div class="col-md-12">
-<button (click)="upvotes(i)" class="btn btn-primary">like</button>{{quote.upvotes}}
-          <button (click)="Downvotes(i)" class="btn btn-outline-danger">Dislike</button>{{quote.Downvotes}}</div></div>
+<button (click)="like()" class="btn btn-primary">like</button>
+{{quote.like}}
+          <button (click)="Dislike()" class="btn btn-outline-danger">Dislike</button>
+        {{quote.Dislike}}</div></div>
           <br>
         
 <button (click)= 'quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button>

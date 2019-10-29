@@ -1,12 +1,12 @@
 export class Quote {
     showDescription: boolean;
-    upvotes:number;
-    Downvotes:number;
-    constructor(public id: number, public name: string, public description: string){
+    like:number;
+    Dislike:number;
+    constructor(public id: number, public name: string, public description: string ){
      this.showDescription=false;
     {
-    this.upvotes=0;
-    this.Downvotes=0;
+    this.like=0;
+    this.Dislike=0;
     }
 
 }
